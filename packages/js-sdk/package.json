@@ -36,7 +36,7 @@
     },
     "peerDependencies": {
         "@ethersproject/contracts": "^5.4.1",
-        "@truffle/contract": "^4.3.29"
+        "@truffle/contract": "^4.3.30"
     },
     "devDependencies": {
         "@decentral.ee/web3-helpers": "^0.5.3",
