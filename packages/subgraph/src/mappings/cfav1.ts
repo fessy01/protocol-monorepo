@@ -33,10 +33,10 @@ export function handleFlowUpdated(event: FlowUpdatedEvent): void {
     // TODO: No need for BigDecimal here?
     let oldFlowRate = flow.flowRate;
     let duration = currentTimestamp.minus(flow.lastUpdate).toBigDecimal();
-
+    flow.lastUpdate = event.block.timestamp;
     flow.flowRate = flowRate;
     let sum = flow.sum;
-    sum = sum + oldFlowRate.toBigDecimal().times(duration);
+    sum = sum.plus(oldFlowRate.toBigDecimal().times(duration));
     flow.sum = sum;
     flow.save();
 
